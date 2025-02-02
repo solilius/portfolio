@@ -1,56 +1,77 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { HashRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { styled } from "styled-components";
-import "./App.css";
 import MainPage from "./Pages/MainPage";
-import Contact from "./Pages/Contact";
+import ContactPage from "./Pages/ContactPage";
+import SelfSummary from "./Components/SelfSummary";
+import AboutMe from "./Pages/AboutMe";
+import { Column } from "./Styles/StyledComponents";
 
+const AppContainer = styled(Column)`
+  padding: 60px;
+  padding-bottom: 20px;
+  gap: 30px;
 
-const MyRouter = styled(Router)`
-  margin: 0 auto;
+  @media (max-width: 768px) {
+    gap: 0;
+    padding: 30px 10px;
+  }
 `;
-
-const RouterContainer = styled.div`
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-`;
-
 
 const Navbar = styled.nav`
   display: flex;
-  justify-content: space-around;
-  padding: 10px;
-  background-color: #ddd;
-  border-radius: 8px;
-  margin-bottom: 10px;
+  justify-content: center;
+  margin-bottom: 20px;
+  gap: 30px;
 
-  a {
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
-  }
-
-  a:hover {
-    color: blue;
+  @media (max-width: 768px) {
+    margin-bottom: 0;
   }
 `;
 
-const App: React.FC = () => {
-  return (
-    <MyRouter>
-      <Navbar>
-        <Link to="/">Games</Link>
-        <Link to="/contact">Contact</Link>
-      </Navbar>
+const NavbarLink = styled(Link)`
+  font-size: 2.2rem;
+  text-decoration: none;
+  color: green;
+  font-weight: bold;
 
-      <RouterContainer>
+  &:hover {
+    color: lightgreen;
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+
+  @media (max-width: 768px) {
+      font-size: 1rem;
+      margin-bottom: 0;
+  }
+  `;
+
+const App: React.FC = () => {
+  window.addEventListener("scroll", function () {
+    document.body.style.backgroundPosition = `${window.scrollY * 0.05}px ${window.scrollY * 0.8}px`;
+  });
+
+  return (
+    <Router>
+      <AppContainer>
+        <SelfSummary />
+
+        <Navbar>
+          <NavbarLink to="/">Games 👾</NavbarLink>
+          <NavbarLink to="/about-me">About me 👨🏻‍💻</NavbarLink>
+          <NavbarLink to="/contact">Contact 💬</NavbarLink>
+        </Navbar>
+
         <Routes>
           <Route path="/" element={<MainPage />} />
-          <Route path="/contact" element={<Contact />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/about-me" element={<AboutMe />} />
         </Routes>
-      </RouterContainer>
-    </MyRouter>
+      </AppContainer>
+    </Router>
   );
 };
 

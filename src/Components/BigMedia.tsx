@@ -1,23 +1,30 @@
 import React, { useState } from "react";
 import { styled } from "styled-components";
 import { MediaItem, MediaType } from "../types";
+import { Row } from "../Styles/StyledComponents";
 
-const MediaWrapper = styled.div`
+const MediaWrapper = styled(Row)`
+justify-content: center;
   width: 100%;
   height: 100%;
   cursor: pointer;
 `;
 
 const MediaIframe = styled.iframe`
-  width: 100%;
+  width: 70%;
   height: 100%;
   border: none;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 const MediaImage = styled.img`
   width: 100%;
   height: auto;
-  object-fit: cover;
+  max-height: 300px;
+  object-fit: contain;
   cursor: pointer;
 `;
 
@@ -35,8 +42,13 @@ const PopupOverlay = styled.div`
 `;
 
 const PopupImage = styled.img`
-  max-width: 90%;
-  max-height: 90%;
+  max-width: 70%;
+  max-height: 70%;
+
+  @media (max-width: 768px) {
+    max-width: 90%;
+    max-height: 90%;
+  }
 `;
 
 const BigMedia: React.FC<MediaItem> = ({ source, type }) => {
@@ -62,13 +74,13 @@ const BigMedia: React.FC<MediaItem> = ({ source, type }) => {
             allowFullScreen
           />
         ) : (
-          <MediaImage src={source} alt="Game Media" />
+          <MediaImage src={`${process.env.PUBLIC_URL}${source}`} alt="Game Media" />
         )}
       </MediaWrapper>
 
       {isPopupOpen && (
         <PopupOverlay onClick={() => setIsPopupOpen(false)}>
-          <PopupImage src={source} alt="Enlarged Media" />
+          <PopupImage src={`${process.env.PUBLIC_URL}${source}`} alt="Enlarged Media" />
         </PopupOverlay>
       )}
     </>

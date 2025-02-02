@@ -1,101 +1,36 @@
 import React from "react";
 import { styled } from "styled-components";
-import MediaCarousel from "./MediaCarousel";
-import { MediaItem } from "../types";
+import GameMedia from "./GameMedia";
+import { Game as GameInterface } from "../types";
+import GameInfo from "./GameInfo";
+import { Row } from "../Styles/StyledComponents";
 
 interface GameProps {
-  game: {
-    name: string;
-    description: string;
-    genres: string[];
-    source: string;
-    media: MediaItem[];
-  };
+  game: GameInterface;
 }
 
-const GameContainer = styled.div`
-  display: flex;
+const GameContainer = styled(Row)`
   align-items: flex-start;
-  gap: 20px;
-  padding: 20px;
-  border-radius: 8px;
-  width: 100%;
-`;
+  
+  & > * {
+    flex: 1;
+    max-width: 50%;
+  }
 
-const LeftContent = styled.div`
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-`;
-
-const RightContent = styled.div`
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
-const GameTitle = styled.h2`
-  margin: 0;
-`;
-
-const GameDescription = styled.p`
-  margin: 5px 0;
-`;
-
-const InfoTable = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  margin-top: 10px;
-`;
-
-const InfoRow = styled.div`
-  display: flex;
-  gap: 8px;
-`;
-
-const InfoKey = styled.span`
-  font-weight: bold;
-  min-width: 70px;
-  text-align: left;
-`;
-
-const InfoValue = styled.span`
-  text-align: left;
-  flex: 1;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  & > * {
+    flex: 1;
+    max-width: 100%;
+  }
+    
 `;
 
 const Game: React.FC<GameProps> = ({ game }) => {
   return (
     <GameContainer>
-      {/* Left Side: Game Info */}
-      <LeftContent>
-        <GameTitle>{game.name}</GameTitle>
-        <GameDescription>{game.description}</GameDescription>
-
-        {/* Game Info Table */}
-        <InfoTable>
-          <InfoRow>
-            <InfoKey>Genres:</InfoKey>
-            <InfoValue>{game.genres.join(", ")}</InfoValue>
-          </InfoRow>
-          <InfoRow>
-            <InfoKey>Source:</InfoKey>
-            <InfoValue>
-              <a href={game.source} target="_blank" rel="noopener noreferrer">
-                {game.source}
-              </a>
-            </InfoValue>
-          </InfoRow>
-        </InfoTable>
-      </LeftContent>
-
-      {/* Right Side: Media */}
-      <RightContent>
-        <MediaCarousel media={game.media} />
-      </RightContent>
+      <GameInfo game={game} />
+      <GameMedia media={game.media} />
     </GameContainer>
   );
 };

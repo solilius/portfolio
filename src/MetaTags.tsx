@@ -1,17 +1,14 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
+import { AboutMeData } from "./types";
 
-interface MetaTagsProps {
-    name: string;
-    description: string;
-}
 
-const MetaTags: React.FC<{ info: MetaTagsProps }> = ({ info }) => {
+const MetaTags: React.FC<{ info: AboutMeData }> = ({ info }) => {
     return (
         <Helmet>
-            <title>{info.name} 👾</title>
-            <meta name="description" content={info.description} />
-            <meta property="og:image" content="/icon.jpg" />
+            <title>{info.name}'s portfolio</title>
+            <meta name="description" content={info.introduction} />
+            <meta property="og:image" content={`${process.env.PUBLIC_URL}/favicon.ico`} />
         </Helmet>
     );
 };

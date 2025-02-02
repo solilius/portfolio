@@ -1,3 +1,20 @@
+export enum LinkImageSource {
+  Github = "/images/logos/github.png",
+  ItchIo = "/images/logos/itch.io.png",
+}
+
+export enum Platform {
+  Windows = "Windows",
+  Mac = "Mac",
+  Linux = "Linux",
+  iOS = "iOS",
+  Android = "Android",
+}
+
+export enum GameEngine {
+  Unity = "Unity",
+  Unreal = "Unreal",
+}
 
 export enum MediaType {
     Image = "image",
@@ -9,10 +26,11 @@ export enum MediaType {
     type: MediaType;
   }
 
-  export interface AboutMe {
+  export interface AboutMeData {
     name: string;
     role: string;
     description: string;
+    introduction: string;
     image: string;
   }
   
@@ -21,6 +39,9 @@ export enum MediaType {
     name: string;
     description: string;
     genres: string[];
-    source: string;
+    source?: { name: string; url: string };
+    links: { source: LinkImageSource; url: string }[];
     media: MediaItem[];
+    platforms: Platform[];
+    engine: GameEngine;
   }
