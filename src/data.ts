@@ -21,7 +21,6 @@ export const games: Game[] = [
     engine: GameEngine.Unity,
     links: [
       { source: LinkImageSource.Github, url: "https://github.com/the-alchemist-labs/zombie-fps" },
-      { source: LinkImageSource.ItchIo, url: "https://solico.itch.io/flames" },
     ],
     media: [
       { source: "https://www.youtube.com/embed/eDHgjaKh5f4", type: MediaType.YouTube },
