@@ -21,6 +21,7 @@ export const games: Game[] = [
     engine: GameEngine.Unity,
     links: [
       { source: LinkImageSource.Github, url: "https://github.com/the-alchemist-labs/zombie-fps" },
+      { source: LinkImageSource.ItchIo, url: "https://solico.itch.io/zombies-fps" }
     ],
     media: [
       { source: "https://www.youtube.com/embed/eDHgjaKh5f4", type: MediaType.YouTube },
@@ -99,7 +100,8 @@ export const games: Game[] = [
     genres: ["Platformer"],
     platforms: [Platform.Windows],
     engine: GameEngine.Unity,
-    links: [],
+    links: [{ source: LinkImageSource.ItchIo, url: "https://solico.itch.io/rocket" },
+    ],
     source: { name: "GameDev.tv Team (Udemy)", url: "https://www.udemy.com/course/unitycourse2" },
     media: [
       { source: "/images/games/Boost/Screenshot_1.png", type: MediaType.Image },
@@ -134,6 +136,7 @@ export const games: Game[] = [
     engine: GameEngine.Unity,
     links: [
       { source: LinkImageSource.Github, url: "https://github.com/the-alchemist-labs/runner" },
+      { source: LinkImageSource.ItchIo, url: "https://solico.itch.io/run-for-your-life" },
     ],
     source: { name: "GameDev.tv Team (Udemy)", url: "https://www.udemy.com/course/unitycourse2" },
     media: [
