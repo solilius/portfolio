@@ -10,7 +10,7 @@ import Footer from "./Components/Footer";
 
 const AppContainer = styled(Column)`
   padding: 60px;
-  padding-bottom: 20px;
+  min-height: 90vh;
   gap: 30px;
 
   @media (max-width: 768px) {
