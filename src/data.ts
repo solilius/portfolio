@@ -14,24 +14,21 @@ export const PersonalInfo: AboutMeData = {
 
 export const games: Game[] = [
   {
-    name: "Zombies FPS",
-    description: "A first-person shooter game where you fight against hordes of zombies in a post-apocalyptic world.",
-    genres: ["FPS", "Shooter-Looter"],
-    platforms: [Platform.Windows, Platform.Linux],
+    name: "Fruits",
+    description: "Simple match 3 game with Addressable tiles.",
+    genres: ["match-3"],
+    platforms: [Platform.Windows, Platform.iOS, Platform.Android],
     engine: GameEngine.Unity,
     links: [
-      { source: LinkImageSource.Github, url: "https://github.com/the-alchemist-labs/zombie-fps" },
-      { source: LinkImageSource.ItchIo, url: "https://solico.itch.io/zombies-fps" }
+      { source: LinkImageSource.Github, url: "https://github.com/solilius/match-3" },
+      { source: LinkImageSource.ItchIo, url: "https://solico.itch.io/match3" }
     ],
     media: [
-      { source: "https://www.youtube.com/embed/eDHgjaKh5f4", type: MediaType.YouTube },
-      { source: "/images/games/ZombieFPS/Screenshot_1.png", type: MediaType.Image },
-      { source: "/images/games/ZombieFPS/Screenshot_2.png", type: MediaType.Image },
-      { source: "/images/games/ZombieFPS/Screenshot_3.png", type: MediaType.Image },
-      { source: "/images/games/ZombieFPS/Screenshot_4.png", type: MediaType.Image },
-      { source: "/images/games/ZombieFPS/Screenshot_6.png", type: MediaType.Image },
+      { source: "https://www.youtube.com/embed/Fu-9Bp_xsGo", type: MediaType.YouTube },
+      { source: "/images/games/Match3/Screenshot_1.png", type: MediaType.Image },
+      { source: "/images/games/Match3/Screenshot_2.png", type: MediaType.Image },
+      { source: "/images/games/Match3/Screenshot_3.png", type: MediaType.Image },
     ],
-
   },
   {
     name: "BioGone",
@@ -55,22 +52,24 @@ export const games: Game[] = [
     ],
   },
   {
-    name: "Flames",
-    description: "Survive waves of enemies in this top-down point and shoot game. Collect power-ups and unlock new weapons.",
-    genres: ["Action", "RPG"],
-    platforms: [Platform.Windows],
+    name: "Zombies FPS",
+    description: "A first-person shooter game where you fight against hordes of zombies in a post-apocalyptic world.",
+    genres: ["FPS", "Shooter-Looter"],
+    platforms: [Platform.Windows, Platform.Linux],
     engine: GameEngine.Unity,
     links: [
-      { source: LinkImageSource.ItchIo, url: "https://solico.itch.io/flames" },
+      { source: LinkImageSource.Github, url: "https://github.com/the-alchemist-labs/zombie-fps" },
+      { source: LinkImageSource.ItchIo, url: "https://solico.itch.io/zombies-fps" }
     ],
-    source: { name: "Blackthornprod (Udemy)", url: "https://www.udemy.com/course/creating-a-cool-2d-action-game-in-unity" },
     media: [
-      { source: "/images/games/Flames/Screenshot_1.png", type: MediaType.Image },
-      { source: "https://www.youtube.com/embed/RhXSakfVc0I", type: MediaType.YouTube },
-      { source: "/images/games/Flames/Screenshot_2.png", type: MediaType.Image },
-      { source: "/images/games/Flames/Screenshot_3.png", type: MediaType.Image },
-      { source: "/images/games/Flames/Screenshot_5.png", type: MediaType.Image },
+      { source: "https://www.youtube.com/embed/eDHgjaKh5f4", type: MediaType.YouTube },
+      { source: "/images/games/ZombieFPS/Screenshot_1.png", type: MediaType.Image },
+      { source: "/images/games/ZombieFPS/Screenshot_2.png", type: MediaType.Image },
+      { source: "/images/games/ZombieFPS/Screenshot_3.png", type: MediaType.Image },
+      { source: "/images/games/ZombieFPS/Screenshot_4.png", type: MediaType.Image },
+      { source: "/images/games/ZombieFPS/Screenshot_6.png", type: MediaType.Image },
     ],
+
   },
   {
     name: "Idelements",
@@ -94,6 +93,25 @@ export const games: Game[] = [
       { source: "/images/games/Idelements/Screenshot_7.png", type: MediaType.Image },
     ],
   },
+  {
+    name: "Flames",
+    description: "Survive waves of enemies in this top-down point and shoot game. Collect power-ups and unlock new weapons.",
+    genres: ["Action", "RPG"],
+    platforms: [Platform.Windows],
+    engine: GameEngine.Unity,
+    links: [
+      { source: LinkImageSource.ItchIo, url: "https://solico.itch.io/flames" },
+    ],
+    source: { name: "Blackthornprod (Udemy)", url: "https://www.udemy.com/course/creating-a-cool-2d-action-game-in-unity" },
+    media: [
+      { source: "/images/games/Flames/Screenshot_1.png", type: MediaType.Image },
+      { source: "https://www.youtube.com/embed/RhXSakfVc0I", type: MediaType.YouTube },
+      { source: "/images/games/Flames/Screenshot_2.png", type: MediaType.Image },
+      { source: "/images/games/Flames/Screenshot_3.png", type: MediaType.Image },
+      { source: "/images/games/Flames/Screenshot_5.png", type: MediaType.Image },
+    ],
+  },
+
   {
     name: "Rocket Boost",
     description: "Avoid hazardous obstacles and get your people to the other side",
@@ -164,7 +182,7 @@ export const games: Game[] = [
     ],
   },
   {
-    name: "To Hot to Handle",
+    name: "Too Hot to Handle",
     description: "Get all the hot stuff but avoid the cold stuff, yeah",
     genres: ["top-down vertical scrolling"],
     platforms: [Platform.Windows],
