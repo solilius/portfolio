@@ -13,6 +13,26 @@ export const PersonalInfo: AboutMeData = {
 };
 
 export const games: Game[] = [
+   {
+    name: "Insomnious",
+    description: "Survive a world where every night could be your last.Explore mysterious biomes, fight dangerous creatures, gather rare materials, and build a base strong enough to withstand the darkness.",
+    genres: ["open-world", "survival", "rpg"],
+    platforms: [Platform.Windows, Platform.Android],
+    engine: GameEngine.Unity,
+    links: [
+      { source: LinkImageSource.Github, url: "https://github.com/the-alchemist-labs/survival" },
+      { source: LinkImageSource.PlayStore, url: "https://play.google.com/store/apps/details?id=com.DefaultCompany.Insomnious" },
+      { source: LinkImageSource.ItchIo, url: "https://solico.itch.io/match3" }
+    ],
+    media: [
+      { source: "/images/games/Insomnious/Screenshot_166.png", type: MediaType.Image },
+      { source: "/images/games/Insomnious/Screenshot_7.png", type: MediaType.Image },
+      { source: "/images/games/Insomnious/Screenshot_2.png", type: MediaType.Image },
+      { source: "/images/games/Insomnious/Screenshot_8.png", type: MediaType.Image },
+      { source: "/images/games/Insomnious/Screenshot_3.png", type: MediaType.Image },
+      { source: "/images/games/Insomnious/Screenshot_1.png", type: MediaType.Image }
+    ],
+  },
   {
     name: "Fruits",
     description: "Simple match 3 game with Addressable tiles.",
