@@ -21,8 +21,7 @@ export const games: Game[] = [
     engine: GameEngine.Unity,
     links: [
       { source: LinkImageSource.Github, url: "https://github.com/the-alchemist-labs/survival" },
-      { source: LinkImageSource.PlayStore, url: "https://play.google.com/store/apps/details?id=com.DefaultCompany.Insomnious" },
-      { source: LinkImageSource.ItchIo, url: "https://solico.itch.io/match3" }
+      { source: LinkImageSource.PlayStore, url: "https://play.google.com/store/apps/details?id=com.DefaultCompany.Insomnious" }
     ],
     media: [
       { source: "/images/games/Insomnious/Screenshot_166.png", type: MediaType.Image },
