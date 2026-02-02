@@ -13,11 +13,28 @@ export const PersonalInfo: AboutMeData = {
 };
 
 export const games: Game[] = [
-   {
+  {
+    name: "Not Fooling Anyone",
+    description: "Blend in the crowd by identifying the pattern of one of the groups and elude your pursuers",
+    genres: ["Puzzle", "RPG", "Top-Down"],
+    platforms: [Platform.Web],
+    engine: GameEngine.Unity,
+    links: [
+      { source: LinkImageSource.ItchIo, url: "https://solico.itch.io/youre-not-fooling-anyone" },
+    ],
+    source: { name: "Globa-Game-Jam-2026", url: "https://globalgamejam.org/games/2026/not-fooling-anyone-8" },
+    media: [
+      { source: "/images/games/Not Fooling Anyone/Screenshot 2026-02-01 at 20.45.39.png", type: MediaType.Image },
+      { source: "/images/games/Not Fooling Anyone/1000207864.png", type: MediaType.Image },
+      { source: "/images/games/Not Fooling Anyone/Screenshot 2026-02-01 at 20.44.57.png", type: MediaType.Image },
+      { source: "/images/games/Not Fooling Anyone/Screenshot 2026-02-01 at 20.47.07.png", type: MediaType.Image }
+    ],
+  },
+  {
     name: "Insomnious",
     description: "Survive a world where every night could be your last.Explore mysterious biomes, fight dangerous creatures, gather rare materials, and build a base strong enough to withstand the darkness.",
     genres: ["open-world", "survival", "rpg"],
-    platforms: [Platform.Windows, Platform.Android],
+    platforms: [Platform.Web, Platform.Android],
     engine: GameEngine.Unity,
     links: [
       { source: LinkImageSource.Github, url: "https://github.com/the-alchemist-labs/survival" },
@@ -36,7 +53,7 @@ export const games: Game[] = [
     name: "Fruits",
     description: "Simple match 3 game with Addressable tiles.",
     genres: ["match-3"],
-    platforms: [Platform.Windows, Platform.iOS, Platform.Android],
+    platforms: [Platform.Web, Platform.iOS, Platform.Android],
     engine: GameEngine.Unity,
     links: [
       { source: LinkImageSource.Github, url: "https://github.com/solilius/match-3" },
@@ -74,7 +91,7 @@ export const games: Game[] = [
     name: "Zombies FPS",
     description: "A first-person shooter game where you fight against hordes of zombies in a post-apocalyptic world.",
     genres: ["FPS", "Shooter-Looter"],
-    platforms: [Platform.Windows, Platform.Linux],
+    platforms: [Platform.Web, Platform.Windows, Platform.Linux],
     engine: GameEngine.Unity,
     links: [
       { source: LinkImageSource.Github, url: "https://github.com/the-alchemist-labs/zombie-fps" },
@@ -116,7 +133,7 @@ export const games: Game[] = [
     name: "Heaven Runner",
     description: "Run on the way to heaven or as far as you can",
     genres: ["Endless Side Scroller"],
-    platforms: [Platform.Windows],
+    platforms: [Platform.Windows, Platform.Web],
     engine: GameEngine.Unity,
     links: [
       { source: LinkImageSource.Github, url: "https://github.com/the-alchemist-labs/runner" },
@@ -135,7 +152,7 @@ export const games: Game[] = [
     name: "Flames",
     description: "Survive waves of enemies in this top-down point and shoot game. Collect power-ups and unlock new weapons.",
     genres: ["Action", "RPG"],
-    platforms: [Platform.Windows],
+    platforms: [Platform.Windows, Platform.Web],
     engine: GameEngine.Unity,
     links: [
       { source: LinkImageSource.ItchIo, url: "https://solico.itch.io/flames" },
@@ -153,7 +170,7 @@ export const games: Game[] = [
     name: "Space something",
     description: "Shoot stuff in space",
     genres: ["Shooter", "Space"],
-    platforms: [Platform.Windows],
+    platforms: [Platform.Windows, Platform.Web],
     engine: GameEngine.Unity,
     links: [],
     source: { name: "GameDev.tv Team (Udemy)", url: "https://www.udemy.com/course/unitycourse2" },
@@ -169,7 +186,7 @@ export const games: Game[] = [
     name: "Rocket Boost",
     description: "Avoid hazardous obstacles and get your people to the other side",
     genres: ["Platformer"],
-    platforms: [Platform.Windows],
+    platforms: [Platform.Windows, Platform.Web],
     engine: GameEngine.Unity,
     links: [{ source: LinkImageSource.ItchIo, url: "https://solico.itch.io/rocket" },
     ],
@@ -187,7 +204,7 @@ export const games: Game[] = [
     name: "Too Hot to Handle",
     description: "Get all the hot stuff but avoid the cold stuff, yeah",
     genres: ["top-down vertical scrolling"],
-    platforms: [Platform.Windows],
+    platforms: [Platform.Windows, Platform.Web],
     engine: GameEngine.Unity,
     links: [
       { source: LinkImageSource.ItchIo, url: "https://solico.itch.io/too-cold-to-handle" },
@@ -205,7 +222,7 @@ export const games: Game[] = [
     name: "Plant Based",
     description: "Collect oil to fuel your truck while shooting obstacles and enemies",
     genres: ["Endless Side Scroller"],
-    platforms: [Platform.Windows],
+    platforms: [Platform.Windows, Platform.Web],
     engine: GameEngine.Unity,
     links: [
       { source: LinkImageSource.ItchIo, url: "https://solico.itch.io/plant-based" },
