@@ -14,6 +14,26 @@ export const PersonalInfo: AboutMeData = {
 
 export const games: Game[] = [
   {
+    name: "Stay in Your Lane",
+    description: "Command an army and destroy the enemy's base! invest in units tech or defenses and control the lane",
+    genres: ["RTS", "Tag-Of-War", "2D", "Online PvP"],
+    platforms: [Platform.Web, Platform.Windows],
+    engine: GameEngine.Unity,
+    links: [
+      { source: LinkImageSource.ItchIo, url: "https://solico.itch.io/stay-in-your-lane" },
+    ],
+    media: [
+      { source: "/images/games/Stay in Your Lane/1.png", type: MediaType.Image },
+      { source: "/images/games/Stay in Your Lane/2.png", type: MediaType.Image },
+      { source: "/images/games/Stay in Your Lane/3.png", type: MediaType.Image },
+      { source: "/images/games/Stay in Your Lane/4.png", type: MediaType.Image },
+      { source: "/images/games/Stay in Your Lane/5.png", type: MediaType.Image },
+      { source: "/images/games/Stay in Your Lane/6.png", type: MediaType.Image },
+      { source: "/images/games/Stay in Your Lane/7.png", type: MediaType.Image },
+      { source: "/images/games/Stay in Your Lane/8.png", type: MediaType.Image }
+    ],
+  },
+  {
     name: "Not Fooling Anyone",
     description: "Blend in the crowd by identifying the pattern of one of the groups and elude your pursuers",
     genres: ["Puzzle", "RPG", "Top-Down"],
