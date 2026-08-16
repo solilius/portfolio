@@ -20,6 +20,7 @@ export const games: Game[] = [
     platforms: [Platform.Web, Platform.Windows],
     engine: GameEngine.Unity,
     links: [
+      { source: LinkImageSource.Steam, url: "https://store.steampowered.com/app/5040850/Stay_in_Your_Lane" },
       { source: LinkImageSource.ItchIo, url: "https://solico.itch.io/stay-in-your-lane" },
     ],
     media: [
