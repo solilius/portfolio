@@ -24,6 +24,7 @@ export const games: Game[] = [
       { source: LinkImageSource.ItchIo, url: "https://solico.itch.io/stay-in-your-lane" },
     ],
     media: [
+      { source: "https://www.youtube.com/embed/L_-6u8wtfP8", type: MediaType.YouTube },
       { source: "/images/games/Stay in Your Lane/1.png", type: MediaType.Image },
       { source: "/images/games/Stay in Your Lane/2.png", type: MediaType.Image },
       { source: "/images/games/Stay in Your Lane/3.png", type: MediaType.Image },
