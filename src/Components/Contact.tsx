@@ -101,6 +101,7 @@ const hints: Record<string, string> = {
   LinkedIn: "Best for work and roles",
   GitHub: "Code and projects",
   "itch.io": "Play my games",
+  Instagram: "Behind the scenes",
   X: "Dev updates",
   Discord: "Join the community",
 };

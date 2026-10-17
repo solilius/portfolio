@@ -29,6 +29,7 @@ export const socials: SocialLink[] = [
   { icon: "linkedin", label: "LinkedIn", url: "https://www.linkedin.com/in/sol-elan-a53555176/" },
   { icon: "github", label: "GitHub", url: "https://github.com/solilius" },
   { icon: "itch", label: "itch.io", url: "https://solico.itch.io/" },
+  { icon: "instagram", label: "Instagram", url: "https://www.instagram.com/sol.elan/" },
   { icon: "x", label: "X", url: "https://x.com/solilius/" },
   { icon: "discord", label: "Discord", url: "https://discord.gg/ymjFMzNECS" },
 ];

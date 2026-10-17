@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { keyframes, styled } from "styled-components";
 import { games, PersonalInfo, socials } from "../data";
 import { Button, Container } from "../Styles/StyledComponents";
@@ -10,8 +10,9 @@ const float = keyframes`
   50% { transform: translateY(-14px) rotate(-1.5deg); }
 `;
 
-const spin = keyframes`
-  to { transform: rotate(360deg); }
+const pulse = keyframes`
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.06); }
 `;
 
 const Wrapper = styled.section`
@@ -77,8 +78,10 @@ const Badge = styled.span`
 
 const Title = styled.h1`
   font-size: clamp(2.6rem, 6vw, 4.6rem);
-  font-weight: 800;
-  letter-spacing: -0.025em;
+  font-family: "Fredoka", var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.05;
 
   em {
     font-style: normal;
@@ -147,25 +150,49 @@ const Visual = styled.div`
     filter: blur(50px);
   }
 
-  img {
-    position: relative;
-    width: 86%;
-    filter: drop-shadow(0 30px 40px rgba(0, 0, 0, 0.55));
-    animation: ${float} 7s ease-in-out infinite;
-  }
-
   @media (max-width: 900px) {
     max-width: 260px;
   }
 `;
 
-const Orbit = styled.div<{ $size: number; $speed: number }>`
+const LogoButton = styled.button`
+  position: relative;
+  z-index: 1;
+  width: 86%;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  border-radius: 50%;
+  -webkit-tap-highlight-color: transparent;
+
+  img {
+    width: 100%;
+    filter: drop-shadow(0 30px 40px rgba(0, 0, 0, 0.55));
+    animation: ${float} 7s ease-in-out infinite;
+  }
+
+  span {
+    display: block;
+    transition: transform 0.15s;
+  }
+
+  &:hover span {
+    animation: ${pulse} 1.1s ease-in-out infinite;
+  }
+
+  &:active span {
+    transform: scale(0.94);
+    animation: none;
+  }
+`;
+
+const Orbit = styled.div`
   position: absolute;
-  width: ${({ $size }) => $size}%;
   aspect-ratio: 1;
   border-radius: 50%;
-  border: 1px dashed rgba(150, 175, 230, 0.18);
-  animation: ${spin} ${({ $speed }) => $speed}s linear infinite;
+  border: 1px solid rgba(150, 175, 230, 0.18);
+  pointer-events: none;
 
   &::after {
     content: "";
@@ -228,56 +255,94 @@ const Stats = styled.dl`
   }
 `;
 
-const Hero: React.FC = () => (
-  <Wrapper id="top">
-    <Grid>
-      <Copy>
-        <Badge>
-          <i />
-          <span>
-            <b>{PersonalInfo.role}</b> · {PersonalInfo.studio}
-          </span>
-        </Badge>
-        <Title>
-          Hi, I'm Sol. I build <em>games people want to play together.</em>
-        </Title>
-        <Lead>{PersonalInfo.introduction}</Lead>
-        <Actions>
-          <Button href="#games">See my games</Button>
-          <Button href="#contact" $variant="ghost">
-            Get in touch
-          </Button>
-        </Actions>
-        <Socials>
-          {socials.map((s) => (
-            <a key={s.label} href={s.url} target="_blank" rel="noopener noreferrer" aria-label={s.label} title={s.label}>
-              <Icon name={s.icon} size={18} />
-            </a>
-          ))}
-        </Socials>
-        <Stats>
-          <div>
-            <dt>Years writing software</dt>
-            <dd>10+</dd>
-          </div>
-          <div>
-            <dt>Games built in Unity</dt>
-            <dd>{games.length}</dd>
-          </div>
-          <div>
-            <dt>Platforms</dt>
-            <dd>PC · Web · Mobile</dd>
-          </div>
-        </Stats>
-      </Copy>
+// Same rings as before: degrees per second (60s and 40s per lap)
+const orbits = [
+  { size: 100, speed: 6 },
+  { size: 82, speed: 9 },
+];
 
-      <Visual>
-        <Orbit $size={100} $speed={60} />
-        <Orbit $size={82} $speed={40} />
-        <img src={asset("/images/brand/lunarsol-games.webp")} alt="LunarSol Games logo" />
-      </Visual>
-    </Grid>
-  </Wrapper>
-);
+const BOOST_SPEED = 200; // speed multiplier at full boost
+const BOOST_DECAY = 2.2; // per second
+
+const Hero: React.FC = () => {
+  const orbitRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const boost = useRef(0);
+
+  useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const angles = orbits.map(() => 0);
+    let last = performance.now();
+    let frame = requestAnimationFrame(function tick(now) {
+      const dt = Math.min((now - last) / 1000, 0.05);
+      last = now;
+      boost.current *= Math.exp(-BOOST_DECAY * dt);
+      orbits.forEach((o, i) => {
+        angles[i] = (angles[i] + o.speed * (1 + BOOST_SPEED * boost.current) * dt) % 360;
+        orbitRefs.current[i]!.style.transform = `rotate(${angles[i]}deg)`;
+      });
+      frame = requestAnimationFrame(tick);
+    });
+    return () => cancelAnimationFrame(frame);
+  }, []);
+
+  const whoosh = () => (boost.current = Math.min(1.5, boost.current + 1));
+
+  return (
+    <Wrapper id="top">
+      <Grid>
+        <Copy>
+          <Badge>
+            <i />
+            <span>
+              <b>{PersonalInfo.role}</b> · {PersonalInfo.studio}
+            </span>
+          </Badge>
+          <Title>
+            Hi, I'm Sol. I build <em>games people want to play together.</em>
+          </Title>
+          <Lead>{PersonalInfo.introduction}</Lead>
+          <Actions>
+            <Button href="#games">See my games</Button>
+            <Button href="#contact" $variant="ghost">
+              Get in touch
+            </Button>
+          </Actions>
+          <Socials>
+            {socials.map((s) => (
+              <a key={s.label} href={s.url} target="_blank" rel="noopener noreferrer" aria-label={s.label} title={s.label}>
+                <Icon name={s.icon} size={18} />
+              </a>
+            ))}
+          </Socials>
+          <Stats>
+            <div>
+              <dt>Years writing software</dt>
+              <dd>10+</dd>
+            </div>
+            <div>
+              <dt>Games built in Unity</dt>
+              <dd>{games.length}</dd>
+            </div>
+            <div>
+              <dt>Platforms</dt>
+              <dd>PC · Web · Mobile</dd>
+            </div>
+          </Stats>
+        </Copy>
+
+        <Visual>
+          {orbits.map((o, i) => (
+            <Orbit key={i} ref={(el) => (orbitRefs.current[i] = el)} style={{ width: `${o.size}%` }} />
+          ))}
+          <LogoButton onClick={whoosh} aria-label="LunarSol Games logo. Click for a boost">
+            <span>
+              <img src={asset("/images/brand/lunarsol-games.webp")} alt="" />
+            </span>
+          </LogoButton>
+        </Visual>
+      </Grid>
+    </Wrapper>
+  );
+};
 
 export default Hero;

@@ -42,34 +42,6 @@ const Portrait = styled.figure`
     border-radius: 26px;
     border: 6px solid var(--bg);
   }
-
-  figcaption {
-    position: absolute;
-    right: -18px;
-    bottom: 24px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 10px 14px 10px 10px;
-    border-radius: 14px;
-    background: var(--surface-2);
-    border: 1px solid var(--line-strong);
-    box-shadow: var(--shadow);
-    font-size: 0.85rem;
-    font-weight: 600;
-
-    img {
-      width: 34px;
-      height: 34px;
-      border: 0;
-      border-radius: 0;
-      object-fit: contain;
-    }
-
-    @media (max-width: 900px) {
-      right: -12px;
-    }
-  }
 `;
 
 const Copy = styled.div`
@@ -124,10 +96,6 @@ const About: React.FC = () => (
     <Grid>
       <Portrait>
         <img src={asset(PersonalInfo.image)} alt={PersonalInfo.name} loading="lazy" />
-        <figcaption>
-          <img src={asset("/images/brand/lunarsol-mark.webp")} alt="" />
-          {PersonalInfo.studio}
-        </figcaption>
       </Portrait>
 
       <Copy>
