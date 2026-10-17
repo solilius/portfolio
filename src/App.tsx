@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import Background from "./Components/Background";
 import Nav from "./Components/Nav";
 import Hero from "./Components/Hero";
 import Featured from "./Components/Featured";
@@ -18,6 +19,7 @@ const App: React.FC = () => {
 
   return (
     <>
+      <Background />
       <Nav />
       <main>
         <Hero />

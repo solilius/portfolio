@@ -145,8 +145,8 @@ const Visual = styled.div`
     position: absolute;
     inset: 12%;
     border-radius: 50%;
-    background: radial-gradient(circle at 35% 45%, rgba(43, 108, 255, 0.55), transparent 60%),
-      radial-gradient(circle at 70% 40%, rgba(255, 176, 46, 0.5), transparent 60%);
+    background: radial-gradient(circle at 35% 45%, rgba(43, 108, 255, 0.45), transparent 60%),
+      radial-gradient(circle at 70% 40%, rgba(255, 176, 46, 0.4), transparent 60%);
     filter: blur(50px);
   }
 

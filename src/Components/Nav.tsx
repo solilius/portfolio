@@ -13,7 +13,7 @@ const Bar = styled.header<{ $solid: boolean }>`
   align-items: center;
   transition: background 0.3s, border-color 0.3s, backdrop-filter 0.3s;
   border-bottom: 1px solid ${({ $solid }) => ($solid ? "var(--line)" : "transparent")};
-  background: ${({ $solid }) => ($solid ? "rgba(7, 11, 23, 0.78)" : "transparent")};
+  background: ${({ $solid }) => ($solid ? "rgba(4, 7, 15, 0.78)" : "transparent")};
   backdrop-filter: ${({ $solid }) => ($solid ? "blur(14px) saturate(140%)" : "none")};
 `;
 
@@ -86,7 +86,7 @@ const Links = styled.nav<{ $open: boolean }>`
     flex-direction: column;
     align-items: stretch;
     padding: 12px 16px 20px;
-    background: rgba(7, 11, 23, 0.97);
+    background: rgba(4, 7, 15, 0.97);
     border-bottom: 1px solid var(--line);
     display: ${({ $open }) => ($open ? "flex" : "none")};
 

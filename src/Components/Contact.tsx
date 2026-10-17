@@ -14,8 +14,8 @@ const Panel = styled.div`
   padding: 56px;
   border-radius: 28px;
   border: 1px solid var(--line-strong);
-  background: radial-gradient(600px 300px at 0% 0%, rgba(43, 108, 255, 0.22), transparent 70%),
-    radial-gradient(600px 300px at 100% 100%, rgba(255, 160, 40, 0.16), transparent 70%), var(--surface);
+  background: radial-gradient(600px 300px at 0% 0%, rgba(43, 108, 255, 0.17), transparent 70%),
+    radial-gradient(600px 300px at 100% 100%, rgba(255, 160, 40, 0.12), transparent 70%), var(--surface);
 
   @media (max-width: 900px) {
     grid-template-columns: 1fr;
@@ -47,7 +47,7 @@ const Channel = styled.a`
   padding: 16px 18px;
   border-radius: 14px;
   border: 1px solid var(--line);
-  background: rgba(7, 11, 23, 0.45);
+  background: rgba(4, 7, 15, 0.45);
   transition: border-color 0.2s, transform 0.2s, background 0.2s;
 
   &:last-child:nth-child(odd) {
@@ -57,7 +57,7 @@ const Channel = styled.a`
   &:hover {
     transform: translateY(-2px);
     border-color: var(--line-strong);
-    background: rgba(7, 11, 23, 0.7);
+    background: rgba(4, 7, 15, 0.7);
   }
 
   span.icon {

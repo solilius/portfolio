@@ -1,8 +1,8 @@
 :root {
-  --bg: #070b17;
-  --bg-2: #0b1222;
-  --surface: #101a2e;
-  --surface-2: #15223b;
+  --bg: #04070f;
+  --bg-2: #070c18;
+  --surface: #0b1324;
+  --surface-2: #0f1a2f;
   --line: rgba(150, 175, 230, 0.14);
   --line-strong: rgba(150, 175, 230, 0.28);
   --text: #eef2fb;
@@ -42,25 +42,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
-}
-
-/* Faint starfield behind everything */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  background:
-    radial-gradient(1px 1px at 12% 18%, rgba(255, 255, 255, 0.5), transparent 60%),
-    radial-gradient(1px 1px at 72% 12%, rgba(255, 255, 255, 0.4), transparent 60%),
-    radial-gradient(1.5px 1.5px at 40% 64%, rgba(255, 255, 255, 0.3), transparent 60%),
-    radial-gradient(1px 1px at 88% 52%, rgba(255, 255, 255, 0.45), transparent 60%),
-    radial-gradient(1px 1px at 22% 82%, rgba(255, 255, 255, 0.35), transparent 60%),
-    radial-gradient(1.5px 1.5px at 60% 30%, rgba(255, 255, 255, 0.25), transparent 60%),
-    radial-gradient(1200px 700px at 85% -10%, rgba(255, 170, 40, 0.08), transparent 60%),
-    radial-gradient(1000px 700px at -10% 10%, rgba(43, 108, 255, 0.12), transparent 60%);
-  background-size: 600px 600px, 600px 600px, 600px 600px, 600px 600px, 600px 600px, 600px 600px, 100% 100%, 100% 100%;
 }
 
 h1,

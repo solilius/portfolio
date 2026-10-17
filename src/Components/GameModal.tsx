@@ -92,7 +92,7 @@ const NavButton = styled.button<{ $side: "left" | "right" }>`
   height: 44px;
   border-radius: 50%;
   border: 1px solid rgba(255, 255, 255, 0.18);
-  background: rgba(7, 11, 23, 0.7);
+  background: rgba(4, 7, 15, 0.7);
   backdrop-filter: blur(6px);
   cursor: pointer;
   display: grid;
@@ -100,7 +100,7 @@ const NavButton = styled.button<{ $side: "left" | "right" }>`
   transition: background 0.2s;
 
   &:hover {
-    background: rgba(7, 11, 23, 0.95);
+    background: rgba(4, 7, 15, 0.95);
   }
 `;
 

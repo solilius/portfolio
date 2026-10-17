@@ -130,7 +130,7 @@ const Kind = styled.span<{ $kind: GameKind }>`
   font-weight: 700;
   letter-spacing: 0.04em;
   backdrop-filter: blur(6px);
-  background: rgba(7, 11, 23, 0.72);
+  background: rgba(4, 7, 15, 0.72);
   color: ${({ $kind }) => ($kind === "original" ? "var(--sun)" : $kind === "jam" ? "#7ef0b4" : "var(--moon)")};
   border: 1px solid rgba(255, 255, 255, 0.12);
 `;
@@ -146,7 +146,7 @@ const VideoTag = styled.span`
   border-radius: 999px;
   font-size: 0.72rem;
   font-weight: 600;
-  background: rgba(7, 11, 23, 0.72);
+  background: rgba(4, 7, 15, 0.72);
   backdrop-filter: blur(6px);
 
   ${PlayGlyph} {

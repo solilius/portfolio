@@ -104,7 +104,7 @@ const Info = styled.div`
     position: absolute;
     inset: 0;
     z-index: -1;
-    background: linear-gradient(180deg, rgba(16, 26, 46, 0.86), var(--surface) 70%), var(--bg-img) center / cover;
+    background: linear-gradient(180deg, rgba(11, 19, 36, 0.86), var(--surface) 70%), var(--bg-img) center / cover;
   }
 
   @media (max-width: 600px) {
