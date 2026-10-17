@@ -1,9 +1,6 @@
-export enum LinkImageSource {
-  Github = "/images/logos/github.png",
-  ItchIo = "/images/logos/itch.io.png",
-  PlayStore = "/images/logos/playstore.png",
-  Steam = "/images/logos/steam.png",
-}
+import { iconPaths } from "./iconPaths";
+
+export type IconName = keyof typeof iconPaths;
 
 export enum Platform {
   Windows = "Windows",
@@ -20,31 +17,50 @@ export enum GameEngine {
 }
 
 export enum MediaType {
-    Image = "image",
-    YouTube = "youtube",
-  }
-  
-  export interface MediaItem {
-    source: string;
-    type: MediaType;
-  }
+  Image = "image",
+  YouTube = "youtube",
+}
 
-  export interface AboutMeData {
-    name: string;
-    role: string;
-    description: string;
-    introduction: string;
-    image: string;
-  }
-  
-  export interface Game
-  {
-    name: string;
-    description: string;
-    genres: string[];
-    source?: { name: string; url: string };
-    links: { source: LinkImageSource; url: string }[];
-    media: MediaItem[];
-    platforms: Platform[];
-    engine: GameEngine;
-  }
+// Original = my own design, Jam = game jam entry, Course = built while following a course
+export type GameKind = "original" | "jam" | "course";
+
+export interface MediaItem {
+  source: string;
+  type: MediaType;
+}
+
+export interface GameLink {
+  icon: IconName;
+  label: string;
+  url: string;
+}
+
+export interface Game {
+  name: string;
+  description: string;
+  genres: string[];
+  kind: GameKind;
+  source?: { name: string; url: string };
+  links: GameLink[];
+  media: MediaItem[];
+  cover?: string;
+  platforms: Platform[];
+  engine: GameEngine;
+}
+
+export interface SocialLink {
+  icon: IconName;
+  label: string;
+  url: string;
+}
+
+export interface AboutMeData {
+  name: string;
+  role: string;
+  studio: string;
+  headline: string;
+  introduction: string;
+  image: string;
+  bio: string[];
+  skills: { title: string; items: string[] }[];
+}
