@@ -78,7 +78,7 @@ const Badge = styled.span`
 
 const Title = styled.h1`
   font-size: clamp(2.6rem, 6vw, 4.6rem);
-  font-family: "Fredoka", var(--font-display);
+  font-family: "DynaPuff", var(--font-display);
   font-weight: 700;
   letter-spacing: -0.01em;
   line-height: 1.05;

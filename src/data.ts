@@ -20,8 +20,14 @@ export const PersonalInfo: AboutMeData = {
     "Under the LunarSol Games name I'm building Stay in Your Lane, an online lane strategy game. I'm also looking to join a studio where I can sharpen my skills, learn from great people and help ship awesome games.",
   ],
   skills: [
-    { title: "Game development", items: ["Unity", "C#", "Online multiplayer", "Game AI", "Steamworks", "Addressables", "Mobile (iOS / Android)"] },
-    { title: "Engineering", items: ["TypeScript", "React", "Node.js", "Socket.IO", "REST APIs", "Git"] },
+    {
+      title: "Game development",
+      items: ["Unity (2D / 3D)", "Multiplayer networking", "Unity Netcode", "ScriptableObjects", "Addressables", "Design patterns", "SOLID", "Pathfinding"],
+    },
+    {
+      title: "Engineering",
+      items: ["C#", "Java", "JavaScript", "TypeScript", "Node.js", "React", "Angular", "Vue", "SQL & NoSQL databases", "WebSockets", "Mobile (iOS / Android)"],
+    },
   ],
 };
 
