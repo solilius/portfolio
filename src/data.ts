@@ -62,7 +62,7 @@ export const games: Game[] = [
       { icon: "steam", label: "Steam", url: "https://store.steampowered.com/app/5040850/Stay_in_Your_Lane" },
       { icon: "itch", label: "itch.io", url: "https://solico.itch.io/stay-in-your-lane" },
     ],
-    media: [video("MLVKLE3DFMg"), ...shots("Stay in Your Lane", ["clash-farm", "clash-jungle", "push-jungle", "danger", "monpa-tower", "build-turret", "gold-digger", "tech-herd", "tech-grove", "campaign-map", "custom-battle", "win", "lose"])],
+    media: [video("MLVKLE3DFMg"), ...shots("Stay in Your Lane", ["clash-farm", "clash-jungle", "build-turret", "push-jungle", "gold-digger", "monpa-tower", "danger", "tech-herd", "tech-grove", "campaign-map", "win", "custom-battle"])],
   },
   {
     name: "Not Fooling Anyone",

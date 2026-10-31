@@ -131,7 +131,7 @@ const Actions = styled.div`
 
 const Strip = styled.div`
   display: grid;
-  grid-template-columns: repeat(8, minmax(0, 1fr));
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 10px;
   margin-top: 14px;
 
@@ -158,13 +158,6 @@ const Strip = styled.div`
       width: 100%;
       height: 100%;
       object-fit: cover;
-    }
-
-    /* Lead shot is 2x2 so 13 shots fill the grid evenly */
-    &:first-child {
-      grid-column: span 2;
-      grid-row: span 2;
-      aspect-ratio: auto;
     }
   }
 `;
