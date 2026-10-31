@@ -47,7 +47,7 @@ export const featured = {
   logo: "/images/siyl/logo.webp",
   poster: "/images/siyl/trailer-poster.webp",
   backdrop: "/images/siyl/bg-lane.webp",
-  trailer: "https://www.youtube-nocookie.com/embed/AtS2DCoB8-0",
+  trailer: "https://www.youtube-nocookie.com/embed/MLVKLE3DFMg",
 };
 
 export const games: Game[] = [
@@ -62,7 +62,7 @@ export const games: Game[] = [
       { icon: "steam", label: "Steam", url: "https://store.steampowered.com/app/5040850/Stay_in_Your_Lane" },
       { icon: "itch", label: "itch.io", url: "https://solico.itch.io/stay-in-your-lane" },
     ],
-    media: [video("AtS2DCoB8-0"), ...shots("Stay in Your Lane", ["1", "2", "3", "4", "5", "6", "7", "8"])],
+    media: [video("MLVKLE3DFMg"), ...shots("Stay in Your Lane", ["clash-farm", "clash-jungle", "push-jungle", "danger", "monpa-tower", "build-turret", "gold-digger", "tech-herd", "tech-grove", "campaign-map", "custom-battle", "win", "lose"])],
   },
   {
     name: "Not Fooling Anyone",

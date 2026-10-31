@@ -159,6 +159,13 @@ const Strip = styled.div`
       height: 100%;
       object-fit: cover;
     }
+
+    /* Lead shot is 2x2 so 13 shots fill the grid evenly */
+    &:first-child {
+      grid-column: span 2;
+      grid-row: span 2;
+      aspect-ratio: auto;
+    }
   }
 `;
 
